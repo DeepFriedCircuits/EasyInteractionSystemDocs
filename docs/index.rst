@@ -12,6 +12,8 @@ UNDER CONSTRUCTION
    :maxdepth: 2
    :caption: Contents:
 
+   usage/getting_started
+
 
 
 Indices and tables

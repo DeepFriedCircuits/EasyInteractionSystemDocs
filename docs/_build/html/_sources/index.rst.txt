@@ -6,9 +6,13 @@
 Welcome to Easy Interaction System's documentation!
 ===================================================
 
+UNDER CONSTRUCTION
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+
+   usage/getting_started
 
 
 
