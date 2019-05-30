@@ -9,11 +9,17 @@ Welcome to Easy Interaction System's documentation!
 UNDER CONSTRUCTION
 
 .. toctree::
-   :maxdepth: 2
+   :titlesonly:
    :caption: Contents:
 
    usage/getting_started
 
+.. toctree::
+    :maxdepth: 1
+    :caption: Components
+
+    components/interaction_handler
+    components/interactive
 
 
 Indices and tables
