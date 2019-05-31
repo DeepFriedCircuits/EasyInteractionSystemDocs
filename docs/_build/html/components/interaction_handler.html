@@ -84,8 +84,19 @@
 </ul>
 <p class="caption"><span class="caption-text">Components</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">BP_InteractionHandler</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">BP_InteractionHandler</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#input">Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interaction-handler-settings">Interaction Handler Settings</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="interactive.html">BP_Interactive</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Relay System:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../relay_system/relay.html">BP_Relay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../relay_system/state_forcer.html">BP_StateForcer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../relay_system/unlocker.html">BP_Unlocker</a></li>
 </ul>
 
             
@@ -151,7 +162,56 @@
            <div itemprop="articleBody">
             
   <div class="section" id="bp-interactionhandler">
-<h1>BP_InteractionHandler<a class="headerlink" href="#bp-interactionhandler" title="Permalink to this headline">¶</a></h1>
+<span id="interaction-handler"></span><h1>BP_InteractionHandler<a class="headerlink" href="#bp-interactionhandler" title="Permalink to this headline">¶</a></h1>
+<p>The <em>BP_InteractionHandler</em> is what allows the player to interact with the world. Add this component to character.</p>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>In your character blueprint, add the BP_InteractionHandler component.</div></blockquote>
+<div class="figure" id="id1">
+<img alt="https://i.gyazo.com/a15f3d6f3df0dd06718983dd20b045f3.png:align:center" src="https://i.gyazo.com/a15f3d6f3df0dd06718983dd20b045f3.png:align:center" />
+<p class="caption"><span class="caption-text">Then, inside of your construction script, call <em>Bind Scan Root</em> on your newly created Interaction Handler.
+The <em>Component</em> will be where the traces are run from, so this could be your camera or any other component.</span></p>
+</div>
+</div>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Now for input. The Handler has two functions for input, <em>Start Interacting</em> and <em>Stop Interacting</em>.
+The interacting should try to start on press, and stop on release. This isn’t a rule, but it should
+work for most situations.</p>
+<div class="figure align-center">
+<img alt="https://i.gyazo.com/a9561302ae60c5a5ca51c72f989aece7.png" src="https://i.gyazo.com/a9561302ae60c5a5ca51c72f989aece7.png" />
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="interaction-handler-settings">
+<h2>Interaction Handler Settings<a class="headerlink" href="#interaction-handler-settings" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="id2">
+<img alt="Interaction Handler settings" src="https://i.gyazo.com/745c70dd55d9ad13705aecdca82c6f49.png" />
+<p class="caption"><span class="caption-text">There are multiple settings to tweak to get your players interaction feeling right, but the defaults work well too.</span></p>
+</div>
+<dl class="docutils">
+<dt><em>Interaction Mode</em></dt>
+<dd>How the interaction handler finds interactives can be either a line trace <cite>(Raycast)</cite> or a sphere check <cite>(AreaScan)</cite>.</dd>
+<dt><em>Update Frequency</em></dt>
+<dd>This determines how often to scan for interactives. If the value is zero, then it will tick every frame.</dd>
+<dt><em>Scan Distance</em></dt>
+<dd>How far from the scan root should interactives be considered.</dd>
+<dt><em>Trace Debug Type</em></dt>
+<dd>Debugs the traces for <cite>Raycast</cite> mode.</dd>
+<dt><em>Dot Weighting</em></dt>
+<dd>Interactives are scored based on distance, and a dot function (how close to directly in front they are). This determines how much score it adds. 1 is full, 0 is not considered.</dd>
+<dt><em>Scan Filter</em></dt>
+<dd><p class="first">By adding items to the <em>EInteractionTypes</em> enum, you can have different interactives for different handlers. This filter allows you to restrict certain types to certain handlers.</p>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><cite>One use case could be interactives are all interacted with one button, and need to be in front, but collectables are another button and don’t have to be dot tested. In that case,
+it would work to have two interaction handlers on your character.</cite></p>
+</div>
+</dd>
+</dl>
+</div>
 </div>
 
 

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>BP_Interactive &mdash; Easy Interaction System 1.0 documentation</title>
+  <title>Interactive States &mdash; Easy Interaction System 1.0 documentation</title>
   
 
   
@@ -27,9 +27,7 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="BP_Relay" href="../relay_system/relay.html" />
-    <link rel="prev" title="BP_InteractionHandler" href="interaction_handler.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -83,12 +81,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../usage/getting_started.html">Getting Started</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Components</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="interaction_handler.html">BP_InteractionHandler</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">BP_Interactive</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#interactive-settings">Interactive Settings</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="interactive.html">BP_Interactive</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Relay System:</span></p>
 <ul>
@@ -140,13 +135,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>BP_Interactive</li>
+      <li>Interactive States</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/components/interactive.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/components/interactive_states.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -159,22 +154,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="bp-interactive">
-<span id="interactive"></span><h1>BP_Interactive<a class="headerlink" href="#bp-interactive" title="Permalink to this headline">¶</a></h1>
-<div class="figure align-center">
-<img alt="https://i.gyazo.com/710f12bd179c11882d33c9f240f82c30.png" src="https://i.gyazo.com/710f12bd179c11882d33c9f240f82c30.png" />
-</div>
-<div class="section" id="interactive-settings">
-<h2>Interactive Settings<a class="headerlink" href="#interactive-settings" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><em>Interactive ID</em></dt>
-<dd>This setting will be used by the relay system, to determine which interactive it was connected to.</dd>
-<dt><em>Interaction Text</em></dt>
-<dd>Use this text to display in your UI.</dd>
-<dt><em>State</em></dt>
-<dd>The current state of the Interactive. See <a class="reference internal" href="interactive_states.html#interactive-states"><span class="std std-ref">Interactive States</span></a>.</dd>
-</dl>
-</div>
+  <div class="section" id="interactive-states">
+<span id="id1"></span><h1>Interactive States<a class="headerlink" href="#interactive-states" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p><strong>Enabled</strong>: fully interactable, and ready to use.</p>
+<p><strong>Disabled</strong>: not interactable, and shouldn’t even show up to the user.</p>
+<p><strong>Locked</strong>: will display on UI, but will not work and will failed the interaction.</p>
+</div></blockquote>
 </div>
 
 
@@ -182,15 +168,6 @@
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../relay_system/relay.html" class="btn btn-neutral float-right" title="BP_Relay" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="interaction_handler.html" class="btn btn-neutral" title="BP_InteractionHandler" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

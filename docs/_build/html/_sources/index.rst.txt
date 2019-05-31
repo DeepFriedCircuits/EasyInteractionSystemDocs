@@ -21,10 +21,12 @@ UNDER CONSTRUCTION
     components/interaction_handler
     components/interactive
 
+.. toctree::
+    :titlesonly:
+    :caption: Relay System:
 
-Indices and tables
-==================
+    relay_system/relay
+    relay_system/state_forcer
+    relay_system/unlocker
 
-* :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`

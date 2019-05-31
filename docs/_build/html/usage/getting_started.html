@@ -87,6 +87,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../components/interaction_handler.html">BP_InteractionHandler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../components/interactive.html">BP_Interactive</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Relay System:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../relay_system/relay.html">BP_Relay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../relay_system/state_forcer.html">BP_StateForcer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../relay_system/unlocker.html">BP_Unlocker</a></li>
+</ul>
 
             
           
@@ -157,14 +163,14 @@
 <h2>Core Components<a class="headerlink" href="#core-components" title="Permalink to this headline">¶</a></h2>
 <p>To have functional interactions, you only need two components:</p>
 <ul class="simple">
-<li><ol class="first arabic">
-<li>The BP_InteractionHandler which handles the players input and interactions.</li>
-</ol>
-</li>
-<li><ol class="first arabic" start="2">
-<li>The BP_Interactive which is the actual component that the interactive actors will use to receive the events.</li>
-</ol>
-</li>
+<li>The <a class="reference internal" href="../components/interaction_handler.html#interaction-handler"><span class="std std-ref">BP_InteractionHandler</span></a> which handles the players input and interactions.</li>
+<li>The <a class="reference internal" href="../components/interactive.html#interactive"><span class="std std-ref">BP_Interactive</span></a> which is the actual component that the interactive actors will use to receive the events.</li>
+</ul>
+<p>Included also, are some helper blueprints to allow for quick and intuitive level design:</p>
+<ul class="simple">
+<li>The <a class="reference internal" href="../relay_system/relay.html#relay-actor"><span class="std std-ref">BP_Relay</span></a> which is the base class for interactive to interactive communication.</li>
+<li>The <a class="reference internal" href="../relay_system/state_forcer.html#state-forcer"><span class="std std-ref">BP_StateForcer</span></a> which is the base class for one interactive to trigger a specific state in another interactive.</li>
+<li>The <a class="reference internal" href="../relay_system/unlocker.html#unlocker"><span class="std std-ref">BP_Unlocker</span></a> which works similar to the state forcer, but is only for locking/unlocking.</li>
 </ul>
 </div>
 </div>
