@@ -20,13 +20,16 @@ UNDER CONSTRUCTION
 
     components/interaction_handler
     components/interactive
+    components/interactive_states
 
 .. toctree::
     :titlesonly:
     :caption: Relay System:
 
     relay_system/relay
-    relay_system/state_forcer
     relay_system/unlocker
+    relay_system/state_forcer
+    relay_system/connecting_actors
+    
 
 * :ref:`search`

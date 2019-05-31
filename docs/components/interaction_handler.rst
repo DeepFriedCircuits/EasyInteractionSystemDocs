@@ -29,6 +29,8 @@ Input
   .. figure:: https://i.gyazo.com/a9561302ae60c5a5ca51c72f989aece7.png
       :align: center
 
+.. _handler-settings:
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Interaction Handler Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^

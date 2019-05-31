@@ -86,7 +86,12 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="interaction_handler.html">BP_InteractionHandler</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">BP_Interactive</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#interactive-settings">Interactive Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interactive-component-properties">Interactive Component Properties</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#settings">Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#caching">Caching</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#audio">Audio</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -161,11 +166,15 @@
             
   <div class="section" id="bp-interactive">
 <span id="interactive"></span><h1>BP_Interactive<a class="headerlink" href="#bp-interactive" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="interactive-component-properties">
+<h2>Interactive Component Properties<a class="headerlink" href="#interactive-component-properties" title="Permalink to this headline">¶</a></h2>
+<p>The interactive component can be tweaked and modified to suite your needs.
+This page should serve as quick cheat sheet explaining each.</p>
+<div class="section" id="settings">
+<h3>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-center">
-<img alt="https://i.gyazo.com/710f12bd179c11882d33c9f240f82c30.png" src="https://i.gyazo.com/710f12bd179c11882d33c9f240f82c30.png" />
+<img alt="https://i.gyazo.com/01a3764e8136352882b70471f4608b09.png" src="https://i.gyazo.com/01a3764e8136352882b70471f4608b09.png" />
 </div>
-<div class="section" id="interactive-settings">
-<h2>Interactive Settings<a class="headerlink" href="#interactive-settings" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
 <dt><em>Interactive ID</em></dt>
 <dd>This setting will be used by the relay system, to determine which interactive it was connected to.</dd>
@@ -173,7 +182,44 @@
 <dd>Use this text to display in your UI.</dd>
 <dt><em>State</em></dt>
 <dd>The current state of the Interactive. See <a class="reference internal" href="interactive_states.html#interactive-states"><span class="std std-ref">Interactive States</span></a>.</dd>
+<dt><em>Locked Text</em></dt>
+<dd>Displayed text when</dd>
+<dt><em>One Shot</em></dt>
+<dd>Determines if the interactive only be interacted once.</dd>
+<dt><em>Looping</em></dt>
+<dd>Should the interaction repeat itself as long as the player holds interact?</dd>
+<dt><em>Duration</em></dt>
+<dd>How long should it take to complete the interaction.</dd>
+<dt><em>Interactive Mask</em></dt>
+<dd>The type of interactive this is. See <a class="reference internal" href="interaction_handler.html#handler-settings"><span class="std std-ref">Interaction Handler Settings</span></a> property <strong>Scan Filter</strong>.</dd>
 </dl>
+</div>
+<div class="section" id="caching">
+<h3>Caching<a class="headerlink" href="#caching" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center">
+<img alt="https://i.gyazo.com/dbf2404304919829462b71ff3dc68da6.png" src="https://i.gyazo.com/dbf2404304919829462b71ff3dc68da6.png" />
+</div>
+<dl class="docutils">
+<dt><em>Cache Progress</em></dt>
+<dd>Keeps the current progress of the interaction store for later. So if you were half way through with
+a long interaction, when you release the button and then interact again, the progress will be still
+half if this property is true.</dd>
+<dt><em>Decay Cached Progress</em></dt>
+<dd>if Cache Progress is true, this will return the progress to zero, at the same rate as the duration allows.</dd>
+</dl>
+</div>
+<div class="section" id="audio">
+<h3>Audio<a class="headerlink" href="#audio" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center">
+<img alt="https://i.gyazo.com/c7fbaabb36922d04620e90aa8cb44e8a.png" src="https://i.gyazo.com/c7fbaabb36922d04620e90aa8cb44e8a.png" />
+</div>
+<dl class="docutils">
+<dt><em>Interaction Sound</em></dt>
+<dd>The sound made on a successful interaction.</dd>
+<dt><em>Interaction Failed Sound</em></dt>
+<dd>The sound made when an interaction failed.</dd>
+</dl>
+</div>
 </div>
 </div>
 
