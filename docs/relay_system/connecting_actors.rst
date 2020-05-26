@@ -10,7 +10,7 @@ In this example, we'll have a locked door, with a button to unlock it. For these
 the door from *EasyInteractionSystem/Blueprints/Templates/BP_Door* and
 *EasyInteractionSystem/Blueprints/Templates/BP_SimpleButton*.
 
-.. note:: the doors has the property "Start Locked" set to true.
+.. note:: the door has the property "Start Locked" set to true.
 
 Next, drag an :ref:'unlocker' into the scene, and look at the details panel.
 
@@ -27,3 +27,5 @@ The whole process can be seen in the following clip:
 Now, the button should be connected to the door, and pressing the button should unlock it.
 
 .. image:: https://i.gyazo.com/fcdd1e150f6564cfb946aa497791b2ac.gif
+
+And that's it! Now you can make more complex connections with this system!

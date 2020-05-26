@@ -6,7 +6,8 @@
 Welcome to Easy Interaction System's documentation!
 ===================================================
 
-UNDER CONSTRUCTION
+Looking to get started? Check out the pages below, or
+watch the getting started videos on youtube: https://youtu.be/_KSky7Rm-iE
 
 .. toctree::
    :titlesonly:
@@ -26,9 +27,10 @@ UNDER CONSTRUCTION
     :titlesonly:
     :caption: Relay System:
 
-    relay_system/connecting_actors
     relay_system/relay
     relay_system/unlocker
     relay_system/state_forcer
+    relay_system/connecting_actors
+    
 
 * :ref:`search`

@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="BP_Relay" href="../relay_system/relay.html" />
+    <link rel="next" title="Interactive States" href="interactive_states.html" />
     <link rel="prev" title="BP_InteractionHandler" href="interaction_handler.html" /> 
 
   
@@ -86,6 +86,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="interaction_handler.html">BP_InteractionHandler</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">BP_Interactive</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#interactive-events">Interactive Events</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#interactive-component-properties">Interactive Component Properties</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#settings">Settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#caching">Caching</a></li>
@@ -94,12 +95,14 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="interactive_states.html">Interactive States</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Relay System:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../relay_system/relay.html">BP_Relay</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../relay_system/state_forcer.html">BP_StateForcer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../relay_system/unlocker.html">BP_Unlocker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../relay_system/state_forcer.html">BP_StateForcer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../relay_system/connecting_actors.html">Connecting Actors</a></li>
 </ul>
 
             
@@ -166,9 +169,30 @@
             
   <div class="section" id="bp-interactive">
 <span id="interactive"></span><h1>BP_Interactive<a class="headerlink" href="#bp-interactive" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="interactive-events">
+<h2>Interactive Events<a class="headerlink" href="#interactive-events" title="Permalink to this headline">¶</a></h2>
+<p>Each interactive has it’s own set of events to help you react to players.</p>
+<div class="figure align-center">
+<img alt="https://i.gyazo.com/eda9642d60ca480dc84d852bf379f3b3.png" src="https://i.gyazo.com/eda9642d60ca480dc84d852bf379f3b3.png" />
+</div>
+<dl class="docutils">
+<dt><em>On Interacted</em></dt>
+<dd>Called when the player has successfully interacted. This is where you should hook in your logic.</dd>
+<dt><em>On Interaction Failed</em></dt>
+<dd>Called when the player has interacted, but failed due to the interactive being locked or disabled.</dd>
+<dt><em>On Hovered Changed</em></dt>
+<dd>Called when the player has gained or lost focus on this. This is a good place to use your highlight system or whatever effect you want to use to display the player’s focus.</dd>
+<dt><em>On State Changed</em></dt>
+<dd>Called when the interactives state changes.</dd>
+<dt><em>On Interaction Start</em></dt>
+<dd>For interactives with durations &gt; 0, this is called at the start, with <em>On Interacted</em> firing at the end.</dd>
+<dt><em>On Interaction Cancelled</em></dt>
+<dd>Called when the player releases the button partially through the interaction.</dd>
+</dl>
+</div>
 <div class="section" id="interactive-component-properties">
 <h2>Interactive Component Properties<a class="headerlink" href="#interactive-component-properties" title="Permalink to this headline">¶</a></h2>
-<p>The interactive component can be tweaked and modified to suite your needs.
+<p>The interactive component can be tweaked and modified to suit your needs.
 This page should serve as quick cheat sheet explaining each.</p>
 <div class="section" id="settings">
 <h3>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h3>
@@ -183,7 +207,7 @@ This page should serve as quick cheat sheet explaining each.</p>
 <dt><em>State</em></dt>
 <dd>The current state of the Interactive. See <a class="reference internal" href="interactive_states.html#interactive-states"><span class="std std-ref">Interactive States</span></a>.</dd>
 <dt><em>Locked Text</em></dt>
-<dd>Displayed text when</dd>
+<dd>Displayed text when player highlights this while it is locked. Could say “locked”, “power off”, etc…</dd>
 <dt><em>One Shot</em></dt>
 <dd>Determines if the interactive only be interacted once.</dd>
 <dt><em>Looping</em></dt>
@@ -201,9 +225,8 @@ This page should serve as quick cheat sheet explaining each.</p>
 </div>
 <dl class="docutils">
 <dt><em>Cache Progress</em></dt>
-<dd>Keeps the current progress of the interaction store for later. So if you were half way through with
-a long interaction, when you release the button and then interact again, the progress will be still
-half if this property is true.</dd>
+<dd>Keeps the current progress of the interaction stored for later. So if you were half way through with
+a long interaction, when you release the button and then interact again, the progress will be still at half if this property is true.</dd>
 <dt><em>Decay Cached Progress</em></dt>
 <dd>if Cache Progress is true, this will return the progress to zero, at the same rate as the duration allows.</dd>
 </dl>
@@ -231,7 +254,7 @@ half if this property is true.</dd>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../relay_system/relay.html" class="btn btn-neutral float-right" title="BP_Relay" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="interactive_states.html" class="btn btn-neutral float-right" title="Interactive States" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="interaction_handler.html" class="btn btn-neutral" title="BP_InteractionHandler" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

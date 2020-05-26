@@ -87,16 +87,19 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">BP_InteractionHandler</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#input">Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#events">Events</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#interaction-handler-settings">Interaction Handler Settings</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="interactive.html">BP_Interactive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interactive_states.html">Interactive States</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Relay System:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../relay_system/relay.html">BP_Relay</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../relay_system/state_forcer.html">BP_StateForcer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../relay_system/unlocker.html">BP_Unlocker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../relay_system/state_forcer.html">BP_StateForcer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../relay_system/connecting_actors.html">Connecting Actors</a></li>
 </ul>
 
             
@@ -163,15 +166,27 @@
             
   <div class="section" id="bp-interactionhandler">
 <span id="interaction-handler"></span><h1>BP_InteractionHandler<a class="headerlink" href="#bp-interactionhandler" title="Permalink to this headline">¶</a></h1>
-<p>The <em>BP_InteractionHandler</em> is what allows the player to interact with the world. Add this component to character.</p>
+<p>The <em>BP_InteractionHandler</em> is what allows the player to interact with the world. Add this component to your character.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><cite>A change in 4.24 caused *Bind Scan Root* to become a protected method, just double click the node and change the *Access Specifier* to public.</cite></p>
+</div>
+<div class="figure align-center">
+<img alt="https://gyazo.com/8f0b3d866286947af1250a16deb848ed.png" src="https://gyazo.com/8f0b3d866286947af1250a16deb848ed.png" />
+</div>
+</div></blockquote>
 <div class="section" id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div>In your character blueprint, add the BP_InteractionHandler component.</div></blockquote>
-<div class="figure" id="id1">
-<img alt="https://i.gyazo.com/a15f3d6f3df0dd06718983dd20b045f3.png:align:center" src="https://i.gyazo.com/a15f3d6f3df0dd06718983dd20b045f3.png:align:center" />
-<p class="caption"><span class="caption-text">Then, inside of your construction script, call <em>Bind Scan Root</em> on your newly created Interaction Handler.
-The <em>Component</em> will be where the traces are run from, so this could be your camera or any other component.</span></p>
+<div class="figure align-center">
+<img alt="https://i.gyazo.com/aa3d592c3d03b530f05b47f13ddb3274.png" src="https://i.gyazo.com/aa3d592c3d03b530f05b47f13ddb3274.png" />
+</div>
+<p>Then, inside of your construction script, call <em>Bind Scan Root</em> on your newly created Interaction Handler.
+The <em>Component</em> will be where the traces are run from, so this could be your camera or any other component.</p>
+<div class="figure align-center">
+<img alt="https://i.gyazo.com/a15f3d6f3df0dd06718983dd20b045f3.png" src="https://i.gyazo.com/a15f3d6f3df0dd06718983dd20b045f3.png" />
 </div>
 </div>
 <div class="section" id="input">
@@ -185,9 +200,17 @@ work for most situations.</p>
 </div>
 </div></blockquote>
 </div>
+<div class="section" id="events">
+<span id="handler-settings"></span><h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Interaction Handler</strong> has a single event:</p>
+<dl class="docutils">
+<dt><em>On Target Changed</em></dt>
+<dd>Called when the player highlights a new interactive.</dd>
+</dl>
+</div>
 <div class="section" id="interaction-handler-settings">
-<span id="handler-settings"></span><h2>Interaction Handler Settings<a class="headerlink" href="#interaction-handler-settings" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-center" id="id2">
+<h2>Interaction Handler Settings<a class="headerlink" href="#interaction-handler-settings" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="id1">
 <img alt="Interaction Handler settings" src="https://i.gyazo.com/745c70dd55d9ad13705aecdca82c6f49.png" />
 <p class="caption"><span class="caption-text">There are multiple settings to tweak to get your players interaction feeling right, but the defaults work well too.</span></p>
 </div>

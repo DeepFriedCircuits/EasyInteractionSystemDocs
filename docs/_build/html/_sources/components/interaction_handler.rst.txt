@@ -3,7 +3,13 @@
 BP_InteractionHandler
 =====================
 
-The *BP_InteractionHandler* is what allows the player to interact with the world. Add this component to character.
+The *BP_InteractionHandler* is what allows the player to interact with the world. Add this component to your character.
+
+    .. note::
+      `A change in 4.24 caused *Bind Scan Root* to become a protected method, just double click the node and change the *Access Specifier* to public.`
+
+    .. figure:: https://gyazo.com/8f0b3d866286947af1250a16deb848ed.png
+          :align: center
 
 ^^^^^
 Setup
@@ -11,11 +17,14 @@ Setup
 
   In your character blueprint, add the BP_InteractionHandler component.
 
-.. figure:: https://i.gyazo.com/a15f3d6f3df0dd06718983dd20b045f3.png
+.. figure:: https://i.gyazo.com/aa3d592c3d03b530f05b47f13ddb3274.png
     :align: center
 
-  Then, inside of your construction script, call *Bind Scan Root* on your newly created Interaction Handler.
-  The *Component* will be where the traces are run from, so this could be your camera or any other component.
+Then, inside of your construction script, call *Bind Scan Root* on your newly created Interaction Handler.
+The *Component* will be where the traces are run from, so this could be your camera or any other component.
+
+.. figure:: https://i.gyazo.com/a15f3d6f3df0dd06718983dd20b045f3.png
+    :align: center
 
 
 ^^^^^
@@ -30,6 +39,17 @@ Input
       :align: center
 
 .. _handler-settings:
+
+^^^^^^
+Events
+^^^^^^
+
+The **Interaction Handler** has a single event:
+
+*On Target Changed*
+    Called when the player highlights a new interactive.
+
+
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Interaction Handler Settings

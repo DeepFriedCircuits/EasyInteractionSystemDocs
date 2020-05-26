@@ -3,11 +3,39 @@
 BP_Interactive
 ==============
 
+^^^^^^^^^^^^^^^^^^
+Interactive Events
+^^^^^^^^^^^^^^^^^^
+
+Each interactive has it's own set of events to help you react to players.
+
+.. figure:: https://i.gyazo.com/eda9642d60ca480dc84d852bf379f3b3.png
+  :align: center
+  
+*On Interacted* 
+    Called when the player has successfully interacted. This is where you should hook in your logic.
+
+*On Interaction Failed* 
+    Called when the player has interacted, but failed due to the interactive being locked or disabled.
+
+*On Hovered Changed*
+    Called when the player has gained or lost focus on this. This is a good place to use your highlight system or whatever effect you want to use to display the player's focus.
+    
+*On State Changed*
+    Called when the interactives state changes.
+    
+*On Interaction Start*
+    For interactives with durations > 0, this is called at the start, with *On Interacted* firing at the end.
+    
+*On Interaction Cancelled*
+    Called when the player releases the button partially through the interaction.
+
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Interactive Component Properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The interactive component can be tweaked and modified to suite your needs.
+The interactive component can be tweaked and modified to suit your needs.
 This page should serve as quick cheat sheet explaining each.
 
 --------
@@ -28,7 +56,7 @@ Settings
   The current state of the Interactive. See :ref:`interactive-states`.
 
 *Locked Text*
-  Displayed text when
+  Displayed text when player highlights this while it is locked. Could say "locked", "power off", etc...
 
 *One Shot*
   Determines if the interactive only be interacted once.
@@ -50,9 +78,8 @@ Caching
   :align: center
 
 *Cache Progress*
-  Keeps the current progress of the interaction store for later. So if you were half way through with
-  a long interaction, when you release the button and then interact again, the progress will be still
-  half if this property is true.
+  Keeps the current progress of the interaction stored for later. So if you were half way through with
+  a long interaction, when you release the button and then interact again, the progress will be still at half if this property is true.
 
 *Decay Cached Progress*
   if Cache Progress is true, this will return the progress to zero, at the same rate as the duration allows.
